@@ -62,6 +62,7 @@ test_predictions.plot(y=['Pred'],ax=ax)
 test_predictions.plot(y=['True'],ax=ax)
 test_predictions.plot(y=['Lower_Bound','Upper_Bound'],c='Black',linestyle='--',ax=ax)
 plt.title('True and Predicted values with\n95% Upper and Lower Prediction Interval Bounds')
+plt.ylabel('Weight')
 plt.savefig('images/QuantileForestPredictionIntervals.png',bbox_inches='tight')
 plt.close()
 
