@@ -17,9 +17,9 @@ The linear methods (linear regression, lasso, and elastic net) all show the wors
 
 As for the nonlinear methods, KNN is slightly outperformed by XGBoost, which is slightly outperformed by random forest/quantile forest, which are outperformed by the neural network. Interestingly, all nonlinear methods except for the neural network have much higher test accuracy than training accuracy, showing that these methods may be overfitting to the training data. The neural net however has comparable train and test RMSE showing that it not only performs the best, but is also not overfitting to training data. The tree based methods may be further improved and reduce overfitting by trying more hyperparameter combinations as they were tuned using a randomized grid search CV for computational efficiency. In addition, feature selection using feature importance and permutation importance may further improve the models.  
 
-![alt text](images/Model_RMSE_Comparison.png "RMSE Comparison Between Models")
+![alt text](Regression/images/Model_RMSE_Comparison.png "RMSE Comparison Between Models")
 
 Both random forest and quantile forest were used, however are very similar. The difference is that quantile forest keeps information about the distribution of data on the leaf nodes which allows for computation of quantiles. This gives the model the capability to give prediction intervals in addition to just predicting the mean. Since the quantile forest is an extension of the random forest, it makes sense that their train/test errors are almost identical given the same set of hyperparameters. Results show that the true value (and prediction) are almost always within the prediction interval. In addition, test points that have higher errors show to generally have larger prediction intervals.
 
-![alt text](images/QuantileForestPredictionIntervals.png "Quantile Forest Prediction Intervals")
-![alt text](images/QuantileForest_AbsoluteError_IntervalSize.png "Quantile Forest Absolute Error vs Interval Size")
+![alt text](Regression/images/QuantileForestPredictionIntervals.png "Quantile Forest Prediction Intervals")
+![alt text](Regression/images/QuantileForest_AbsoluteError_IntervalSize.png "Quantile Forest Absolute Error vs Interval Size")
