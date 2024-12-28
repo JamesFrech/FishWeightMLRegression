@@ -9,5 +9,6 @@ data.sort_values('TestRMSE',inplace=True,ascending=False)
 print(data)
 
 ax = data.plot.bar(rot=45)
+plt.ylabel('RMSE')
 plt.savefig('images/Model_RMSE_Comparison.png',bbox_inches='tight')
 plt.close()
